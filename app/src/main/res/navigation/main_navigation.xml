@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.lopezalex.booknook.login.LoginFragment"
+        android:label="@string/login_label"
+        tools:layout="@layout/login_fragment">
+        <action
+            android:id="@+id/action_loginFragment_to_welcomeFragment"
+            app:destination="@id/welcome_destination"
+            app:launchSingleTop="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/welcome_destination"
+        android:name="com.lopezalex.booknook.welcome.WelcomeFragment"
+        android:label="@string/welcome_label"
+        tools:layout="@layout/welcome_fragment">
+        <action
+            android:id="@+id/action_welcome_destination_to_instructionsFragment"
+            app:destination="@id/instructions_destination" />
+    </fragment>
+    <fragment
+        android:id="@+id/instructions_destination"
+        android:name="com.lopezalex.booknook.instructions.InstructionsFragment"
+        android:label="@string/instructions_label">
+        <action
+            android:id="@+id/action_instructions_destination_to_book_list_destination"
+            app:destination="@id/book_list_destination"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/book_list_destination"
+        android:name="com.lopezalex.booknook.books.BookListFragment"
+        android:label="@string/book_list_label" >
+        <action
+            android:id="@+id/action_book_list_destination_to_bookDetailFragment"
+            app:destination="@id/book_detail_add_destination" />
+        <action
+            android:id="@+id/action_book_list_destination_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/book_detail_add_destination"
+        android:name="com.lopezalex.booknook.books.BookDetailFragment"
+        android:label="@string/add_book_label"
+        tools:layout="@layout/book_detail_fragment" >
+        <action
+            android:id="@+id/action_book_detail_add_destination_to_book_list_destination"
+            app:destination="@id/book_list_destination" />
+    </fragment>
+</navigation>

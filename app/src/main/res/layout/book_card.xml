@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardViewParent"
+    android:orientation="horizontal"
+    app:cardElevation="2dp"
+    app:cardCornerRadius="9dp"
+    app:cardBackgroundColor="@color/cardColor"
+    android:layout_margin="5dp"
+    >
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="350dp"
+        android:layout_height="100dp"
+        app:cardElevation="0dp"
+        android:outlineProvider="none"
+        android:padding="5dp"
+        app:cardBackgroundColor="@color/cardColor"
+        android:layout_margin="5dp"
+        >
+
+        <LinearLayout
+            android:id="@+id/cardLinLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:id="@+id/bookNameDisplay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/name_text"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:padding="2dp"/>
+
+            <TextView
+                android:id="@+id/bookAuthorDisplay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:padding="2dp"
+                android:text="@string/author_text"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/bookDescriptionDisplay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:padding="2dp"
+                android:text="@string/description_text"
+                android:textSize="14sp"
+                android:layout_marginTop="8dp"/>
+
+            <TextView
+                android:id="@+id/bookPageDisplay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:padding="2dp"
+                android:text="@string/book_page"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+</com.google.android.material.card.MaterialCardView>
