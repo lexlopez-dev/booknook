@@ -2,10 +2,8 @@ package com.lopezalex.booknook.books
 
 import android.os.Bundle
 import android.provider.ContactsContract
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.LinearLayout
 import androidx.core.view.marginBottom
 import androidx.databinding.DataBindingUtil
@@ -13,6 +11,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI.setupActionBarWithNavController
+import androidx.navigation.ui.onNavDestinationSelected
 import com.lopezalex.booknook.R
 import com.lopezalex.booknook.databinding.BookCardBinding
 import com.lopezalex.booknook.databinding.BookDetailFragmentBinding
@@ -52,6 +51,7 @@ class BookListFragment : Fragment() {
 
         binding.bookAddFab.setOnClickListener { findNavController().navigate(BookListFragmentDirections.actionBookListDestinationToBookDetailFragment()) }
 
+        setHasOptionsMenu(true)
 
         return binding.root
     }
@@ -65,4 +65,21 @@ class BookListFragment : Fragment() {
         binding.bookListLinearLayout.addView(bookLayoutBinding.root)
 
     }
+
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+
+        inflater.inflate(R.menu.options_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId) {
+            R.id.loginFragment ->
+                findNavController().navigate(BookListFragmentDirections.actionBookListDestinationToLoginFragment())
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+
 }

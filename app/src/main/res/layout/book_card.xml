@@ -21,7 +21,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
         android:layout_width="350dp"
-        android:layout_height="100dp"
+        android:layout_height="120dp"
         app:cardElevation="0dp"
         android:outlineProvider="none"
         android:padding="5dp"
@@ -44,7 +44,9 @@
                 android:text="@{book.name}"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                android:padding="2dp"/>
+                android:padding="2dp"
+                android:textAlignment="center"
+                />
 
             <TextView
                 android:id="@+id/bookAuthorDisplay"
@@ -61,9 +63,12 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:padding="2dp"
+                android:ems="18"
                 android:text="@{book.description}"
                 android:textSize="14sp"
-                android:layout_marginTop="8dp"/>
+                android:layout_marginTop="8dp"
+                android:maxLines="2"
+                android:ellipsize="end"/>
 
             <TextView
                 android:id="@+id/bookPageDisplay"

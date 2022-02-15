@@ -44,7 +44,7 @@
             android:id="@+id/action_book_list_destination_to_loginFragment"
             app:destination="@id/loginFragment"
             app:popUpTo="@id/loginFragment"
-            app:popUpToInclusive="true" />
+            app:popUpToInclusive="false" />
     </fragment>
     <fragment
         android:id="@+id/book_detail_add_destination"
