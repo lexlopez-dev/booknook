@@ -1,17 +1,21 @@
 package com.lopezalex.booknook.books
 
 import android.os.Bundle
+import android.provider.ContactsContract
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import androidx.core.view.marginBottom
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI.setupActionBarWithNavController
 import com.lopezalex.booknook.R
+import com.lopezalex.booknook.databinding.BookCardBinding
+import com.lopezalex.booknook.databinding.BookDetailFragmentBinding
 import com.lopezalex.booknook.databinding.BookListFragmentBinding
 import com.lopezalex.booknook.models.Book
 import com.lopezalex.booknook.viewmodel.BookViewModel
@@ -55,15 +59,10 @@ class BookListFragment : Fragment() {
 
     private fun addViewForBook(book: Book) {
 
-        Timber.i("In addViewForBook")
-        Timber.i("Book name = ${book.name}")
-        val view = layoutInflater.inflate(R.layout.book_card, null)
-        view.bookNameDisplay.text = book.name
-        view.bookAuthorDisplay.text = book.author
-        view.bookDescriptionDisplay.text = book.description
-        view.bookPageDisplay.text = book.pages
-
-        binding.bookListLinearLayout.addView(view)
+        var bookLayoutBinding = DataBindingUtil.inflate<BookCardBinding>(layoutInflater, R.layout.book_card, binding.bookListLinearLayout, false)
+        bookLayoutBinding.book = book
+        bookLayoutBinding.notifyChange()
+        binding.bookListLinearLayout.addView(bookLayoutBinding.root)
 
     }
 }

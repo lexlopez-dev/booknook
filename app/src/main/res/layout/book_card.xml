@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<data>
+    <variable
+        name="book"
+        type="com.lopezalex.booknook.models.Book" />
+</data>
+<!--Card View was used here, this will be inflated in the BookList page -->
+<com.google.android.material.card.MaterialCardView
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -34,7 +41,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/name_text"
+                android:text="@{book.name}"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:padding="2dp"/>
@@ -45,7 +52,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:padding="2dp"
-                android:text="@string/author_text"
+                android:text="@{book.author}"
                 android:textSize="12sp" />
 
             <TextView
@@ -54,7 +61,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:padding="2dp"
-                android:text="@string/description_text"
+                android:text="@{book.description}"
                 android:textSize="14sp"
                 android:layout_marginTop="8dp"/>
 
@@ -64,7 +71,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="left"
                 android:padding="2dp"
-                android:text="@string/book_page"
+                android:text="@{book.pages}"
                 android:textSize="12sp" />
         </LinearLayout>
 
@@ -72,3 +79,4 @@
     </androidx.cardview.widget.CardView>
 
 </com.google.android.material.card.MaterialCardView>
+</layout>

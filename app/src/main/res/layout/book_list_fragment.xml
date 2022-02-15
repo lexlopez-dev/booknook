@@ -10,6 +10,8 @@
             name="bookListViewModel"
             type="com.lopezalex.booknook.viewmodel.BookViewModel" />
     </data>
+
+    <!--ConstraintLayout was used here, as I struggled with placements of FAB, and this layout was the best/simplest approach I could find to have the FAB exactly where I wanted -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">

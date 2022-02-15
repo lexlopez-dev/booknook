@@ -9,7 +9,7 @@
             name="viewModel"
             type="com.lopezalex.booknook.viewmodel.BookViewModel"/>
     </data>
-
+    <!--Constraint layout was used here for now. Reason for this is I plan to expand this layout further in the future to allow for many more inputs from the user and it might be easier with constraintLayout -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">

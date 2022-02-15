@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".MainActivity"
     >
-
+    <!--Linear layout was used here since it is simply used for the Toolbar, and the Fragment to match the parent -->
     <LinearLayout
         android:id="@+id/mainLinearLayout"
         android:layout_width="match_parent"
